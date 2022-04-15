@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Humanity With Us</title>
+        <Link rel="icon" href="images/favicon-16x16.png">
+        <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+          .header {
+                overflow: hidden;
+                background-color:lightskyblue;
+                padding: 0px 20px;
+            }
+            .header a {
+                float: left;
+                color:rgb(90, 90, 231);
+                text-align: center;
+                font-weight: bold;
+                padding: 18px;
+                text-decoration:none;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                line-height: 25px;
+                border-radius: 4px;
+                margin-top: 45px;
+            }
+            
+            .header a.active:hover {
+                opacity: 0.8;
+                color: black;
+            }
+            .header a.nonactive:hover {
+                background-color:rgb(228, 227, 220);
+                color: black;
+            }
+            .header a.active {
+                font-size: 20px;
+                border-radius: 30px;
+                padding: 10px 40px ;
+                margin-right: 250px;
+                background-color:rgb(90, 90, 231);
+                color: white;
+            }
+            .header a.nonactive{
+                font-size: 20px;
+                border-radius: 30px;
+                padding: 10px 40px;
+            }
+        
+            .header-right {
+                float: right;
+            }
+
+            @media screen and (max-width: 500px) {
+                .header a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+                .header-right {
+                    float: none;
+                }
+            }
+            
+            section{
+                background-image:url("images/P11.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-color:white;
+                text-align: center;
+                height: 28500px;
+            }
+            .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+
+            
+            .footer{
+                background-color:rgb(53, 53, 53);
+                color:white;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .f2{
+                font-size: 25px;
+            }
+            .fa {
+                padding: 10px;
+                font-size: 10px;
+                width: 30px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 50%;
+                margin: 5px 2px;
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+            .fa-facebook {
+            background: #3B5998;
+            color: white;
+            }
+
+
+            .fa-instagram {
+            background: #b4275d;
+            color: white;
+            }
+
+            .fa-comments {
+              color: #0e8ce0;
+              font-size: 20px;
+              margin-right: 10px;
+            }
+
+
+            * {
+            box-sizing: border-box;
+            }
+
+            .main {
+            max-width: 950px;
+            margin: auto;
+            }
+
+
+            .row {
+            margin: 10px -16px;
+            }
+
+            .row,
+            .row > .column {
+            padding: 20px;
+            }
+
+            .column {
+            float: left;
+            width: 50%;
+            display: none; 
+            }
+        
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .content {
+            background-color:  rgb(252, 212, 212);
+            padding: 40px;
+            }
+
+            .serv {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            u{
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+            .show {
+            display: block;
+            }
+
+            .btn {
+            margin-bottom: 10px;  
+            margin-right: 5px;
+            border: none;
+            outline: none;
+            padding: 20px 35px;
+            font-size: 18px;
+            background-color: white;
+            cursor: pointer;
+            }
+
+            .btn:hover {
+            background-color: #ddd;
+            }
+
+            .btn.active {
+            background-color:  #666;
+            color: white;
+            }
+
+            .open-button {
+              font-size: 17px;
+              background-color: #555;
+              color: white;
+              padding: 16px 20px;
+              border: none;
+              cursor: pointer;
+              opacity: 0.8;
+              position: fixed;
+              bottom: 23px;
+              right: 28px;
+              width: 200px;
+            }
+            .form-popup {
+              display: none;
+              position: fixed;
+              bottom: 0;
+              right: 15px;
+              border: 3px solid  #555;
+              z-index: 9;
+            }
+
+            .form-container {
+              max-width: 250px;
+              padding: 10px;
+              background-color: white;
+            }
+
+            .form-container input[type=text], .form-container input[type=email], .form-container textarea[class=textarea] {
+              font-family: Arial, Helvetica, sans-serif;
+              width: 100%;
+              padding: 15px;
+              margin: 5px 0 22px 0;
+              border: none;
+              background: #f1f1f1;
+            }
+
+            .form-container input[type=text]:focus, .form-container input[type=email]:focus, .form-container textarea[class=textarea]:focus {
+              background-color: #ddd;
+              outline: none;
+            }
+
+            .form-container .btn {
+              background-color: #0e8ce0;
+              color: white;
+              padding: 16px 20px;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              margin-bottom:10px;
+              opacity: 0.8;
+            }
+
+            .form-container .cancel {
+              background-color: rgb(182, 3, 3);
+            }
+            .form-container .btn:hover, .open-button:hover {
+              opacity: 1;
+            }
+        </style>
+    </head>
+<body>
+
+
+  <header>
+    <div class="header" id="myHeader">
+        <img src="images/128.ico">
+        <div class="header-right">
+            <a class="nonactive" href="/">HOME</a>
+            <a class="nonactive" href="/services">SERVICES</a>
+            <a class="nonactive" href="/about">ABOUT US</a>
+            <a class="nonactive" href="#contact us">CONTACT US</a>
+            <a class="active" href="/contact">REGISTER NOW</a>
+        </div>
+    </div>
+</header>
+
+
+<section>
+  <div>
+      
+    <button class="open-button" onclick="openForm()">Comment Box</button>
+
+    <div class="form-popup" id="myForm">
+      <form class="form-container" action="/comment" method="post">
+        <h1><i class="fa fa-comments"></i>Please Comment</h1>
+        <hr>
+        <br>
+        
+        <input type="text" placeholder="Enter Name..." name="name" required>
+        <input type="email" placeholder="Enter Email..." name="email" required>
+        <textarea class="textarea" id="comment" name="message" placeholder="Enter Message..."></textarea>
+
+        <button type="submit" class="btn">Post Comment</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+  </div>
+    <div class="main">
+    <br><br>
+
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('bengaluru')"> Bengaluru</button>
+      <button class="btn" onclick="filterSelection('chandigarh')"> Chandigarh</button>
+      <button class="btn" onclick="filterSelection('chennai')"> Chennai</button>
+      <button class="btn" onclick="filterSelection('delhi')"> Delhi</button>
+      <button class="btn" onclick="filterSelection('jaipur')"> Jaipur</button>
+      <button class="btn" onclick="filterSelection('kolkata')"> Kolkata</button>
+      <button class="btn" onclick="filterSelection('lucknow')"> Lucknow</button>
+      <button class="btn" onclick="filterSelection('mumbai')"> Mumbai</button>
+    </div>
+
+    <div class="row">
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/aathma.jpeg"  style="width:100%">
+          <u>Aathma Foundation Charitable Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 9444814567 / 044-2622 0400</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>aathmacare@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>P-38, LIC Colony, opp OM shakti temple, Jeevan Bhimanagar, Bengaluru-560075</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/search/P-38,LIC+Colony,+opp+OM+shakti+temple,+Jeevan+Bhimanagar,+H.A.L+3rd+stage,J.B.nagar+post,Bengaluru-560075/@12.971627,77.6479214,14z/data=!3m1!4b1">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/info@agastya.jpeg"  style="width:100%">
+          <u>Agastya International Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 80 41124132 / +91 80 23545054</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@agastya.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>No 101, Varsav Plaza, 12, Jayamahal Main Road, Bengaluru-560046</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Agastya+International+Foundation/@12.9985692,77.5934573,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae165bd2fa62d9:0x93a63bdfd2de0af4!8m2!3d12.998564!4d77.595646">Google Map Link</a><br>
+          <a class="serv">Rating: 4.7</a>
+        </div>
+      </div>
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/Mobility.jpeg"  style="width:100%">
+          <u>Mobility India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-80-26492222 / +91-80-26494444</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>e-mail@mobility-india.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>7812, 1st Cross Rd, Marenahalli, 2nd Phase, J. P. Nagar, Bengaluru-560078</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/MOBILITY+INDIA/@12.91631,77.589327,14z/data=!4m5!3m4!1s0x0:0xf0da41ad9d0630dd!8m2!3d12.9163476!4d77.5893274?hl=en">Google Map Link</a><br>
+          <a class="serv">Rating: 4.7</a>
+        </div>
+      </div>
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/Acceptlogofull.jpeg"  style="width:100%">
+          <u>Accept Society</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>080 2846 5802</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>acceptindia@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Doddagubbi Main Rd, Kuvempu Layout, Visthar, Bengaluru-560077</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Accept+Society/@13.0738319,77.6551775,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae1a1ceed72915:0x295e157ff1f90573!8m2!3d13.0738267!4d77.6573662">Google Map Link</a><br>
+          <a class="serv">Rating: 4.6</a>
+        </div>
+      </div>
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/Prerana.jpeg"  style="width:100%">
+          <u>Prerana NGO</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 8618222685</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@preranango.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>580, 44th Cross Rd, 8th Block, Jayanagar, Bengaluru-560070</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Prerana+NGO/@12.91821,77.5732632,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae150893f5d05b:0xb5dbabd7d9561a2e!8m2!3d12.9181388!4d77.5754501">Google Map Link</a><br>
+          <a class="serv">Rating: 4.6</a>
+        </div>
+      </div>
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/ablasharam.jpeg"  style="width:100%">
+          <u>Abalashrama</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Women Development and Empowerment</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>085468 70874</a><br>
+          <a class="serv">Official Website:</a>&nbsp;<a href="http://abalashram.org/">abalashram.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Samartha Skills, No. 125, Bugle Rock Rd, Basavanagudi, Bengaluru-560004</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Abalashrama+,Pradhan+Mantri+Kaushal+Kendra/@12.9435442,77.5688082,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae1563ba77246d:0x80a0108c56ca1515!8m2!3d12.943539!4d77.5709969">Google Map Link</a><br>
+          <a class="serv">Rating: 4.3</a>
+        </div>
+      </div>
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/Pratham books.jpeg"  style="width:100%">
+          <u>Pratham Books</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+918042052574</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>hello@prathambooks.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>House No. 621,Second Floor, OMBR Layout, 5th Main Rd, Lakshmamma Layout, Banswadi, Bengaluru-560043</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.co.in/maps/place/Pratham+Books/@13.0100007,77.6549489,17z/data=!4m12!1m6!3m5!1s0x3bae112b88deaaa3:0x36ff2fdc62673411!2sPratham+Books!8m2!3d13.0099812!4d77.6571464!3m4!1s0x3bae112b88deaaa3:0x36ff2fdc62673411!8m2!3d13.0099812!4d77.6571464">Google Map Link</a><br>
+          <a class="serv">Rating: 4.2</a>
+        </div>
+      </div>
+      <div class="column bengaluru">
+        <div class="content">
+          <img src="images/al aman society.jpg"  style="width:100%">
+          <u>Al Aman Educational And Welfare Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 9740125500</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>ashianaoldage@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>62, Mosque Road, Frazer Town, Bengaluru-560005</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/62,+Mosque+Rd,+Pulikeshi+Nagar,+Bengaluru,+Karnataka+560005/@12.9992167,77.6137904,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae16f1023d6bc1:0x7d5cdbfe705e5131!8m2!3d12.9992115!4d77.6159791">Google Map Link</a><br>
+          <a class="serv">Rating: 4.0</a>
+        </div>
+      </div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/aashray ngo.jfif"  style="width:100%">
+          <u>AASHRAY NGO</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Covid</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 9815151895</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>aashrayngo36@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>256, Ground floor, Sector 41A, Chandigarh-160036</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/AASHRAY+NGO/@30.7441022,76.7103368,12z/data=!4m9!1m2!2m1!1sfood+ngo+in+chandigarh!3m5!1s0x390fef8697566439:0xa71b38900d0455d6!8m2!3d30.7363555!4d76.7415818!15sChZmb29kIG5nbyBpbiBjaGFuZGlnYXJoWhgiFmZvb2QgbmdvIGluIGNoYW5kaWdhcmiSARdub25fcHJvZml0X29yZ2FuaXphdGlvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSaE1uTnFNVUpSRUFF">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/international human rights organization.png"  style="width:100%">
+          <u>International Human Rights Organization</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 9311061107</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@ihroworld.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>1656 sector 33-D, Chandigarh-160020</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/International+human+rights+organization+IHRO/@30.7133436,76.7611006,16z/data=!4m9!1m2!2m1!1sinternational+human+rights+organization+chandigarh!3m5!1s0x390fedd885075513:0xc65414562904e028!8m2!3d30.713373!4d76.7655257!15sCjJpbnRlcm5hdGlvbmFsIGh1bWFuIHJpZ2h0cyBvcmdhbml6YXRpb24gY2hhbmRpZ2FyaJIBEGNvcnBvcmF0ZV9vZmZpY2U">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/slaamzindgi.png"  style="width:100%">
+          <u>Salaam Zindagi Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Food</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-9888771169</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@salaamzindagi.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Bharthi Bhawan, Sector 30B, Chandigarh-160031</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Salaam+Zindagi+Charitable+Trust/@30.7137488,76.7196277,12z/data=!4m9!1m2!2m1!1sfood+ngo+in+chandigarh!3m5!1s0x390fede8d6e8454b:0x6fc9d9d4c8a29580!8m2!3d30.7137488!4d76.7896655!15sChZmb29kIG5nbyBpbiBjaGFuZGlnYXJoWhgiFmZvb2QgbmdvIGluIGNoYW5kaWdhcmiSARdub25fcHJvZml0X29yZ2FuaXphdGlvbpoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOeFh6WmhMWGRuUlJBQg">Google Map Link</a><br>
+          <a class="serv">Rating: 4.9</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/Helpage India.jpg"  style="width:100%">
+          <u>Helpage India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>0172 269 3869</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>headoffice@helpageindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>House No. 5745 GF, Market Rd, Sector 38 West, Chandigarh-160038</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/HelpAge+India/@30.751234,76.7367301,17z/data=!3m1!4b1!4m5!3m4!1s0x390fedfc9bca68f5:0x335c90236fb79993!8m2!3d30.751234!4d76.7389188">Google Map Link</a><br>
+          <a class="serv">Rating: 4.7</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/serve humanity serve god.png"  style="width:100%">
+          <u>Serve Humanity Serve God</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Covid</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 9814119214</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>servehumanityservegod@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>House no 7 Village - Ratwara, New Chandigarh-140901</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Serve+humanity+Serve+God+Care+Center/@30.7999402,76.7295436,17z/data=!3m1!4b1!4m5!3m4!1s0x390ff125d1614439:0xb948e9c030775ed2!8m2!3d30.7999402!4d76.7317323">Google Map Link</a><br>
+          <a class="serv">Rating: 4.7</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/sangye menla trust.jpg"  style="width:100%">
+          <u>Sangye-Menla Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 9888666049</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>sangyemenlapt@yahoo.co.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Khuda Ali Sher, Chandigarh-160011</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Sangye-Menla+Trust/@30.7769457,76.8080951,17z/data=!3m1!4b1!4m5!3m4!1s0x390ff2a4f448e6d5:0x2d6826829e0e6600!8m2!3d30.7769457!4d76.8102838">Google Map Link</a><br>
+          <br>
+          <a class="serv">Rating: 4.6</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/donbosco.png"  style="width:100%">
+          <u>DON BOSCO SOCIETY</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Food</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+919915638969</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>dbmondoproject@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>24A, Sector 24, Chandigarh-160036</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Don+Bosco+Navjeevan+Society/@30.744027,76.7103364,12z/data=!4m9!1m2!2m1!1sfood+ngo+in+chandigarh!3m5!1s0x390fed91391a7f27:0x6460b10aefdd63c2!8m2!3d30.7473698!4d76.7642923!15sChZmb29kIG5nbyBpbiBjaGFuZGlnYXJokgEXbm9uX3Byb2ZpdF9vcmdhbml6YXRpb24">Google Map Link</a><br>
+          <a class="serv">Rating: 4.5</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/saarthi.jpg"  style="width:100%">
+          <u>Saarthi</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>09463971544</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@saarthi.org.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>573, Near Govt. Middle School, Kishangarh, Chandigarh-160101</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.co.in/maps/place/Saarthi-Enlightening+Your+Pathway/@30.734456,76.827872,16z/data=!4m5!3m4!1s0x390f92d2ecf38f49:0x9befa122d6649992!8m2!3d30.7345684!4d76.8278237?hl=en">Google Map Link</a><br>
+          <a class="serv">Rating: 4.3</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/nanhe kadam.png"  style="width:100%">
+          <u>Nanhe Kadam</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>09884707580</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>team@nanhekadam.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>S.C.O.36 (First Floor) Sector 26, Madhya Marg, Chandigarh-160019</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/NANHE+KADAM/@36.3448509,61.4287067,4z/data=!4m5!3m4!1s0x0:0x6a2edf787283d098!8m2!3d30.7263355!4d76.8040718?hl=en">Google Map Link</a><br>
+          <a class="serv">Rating: 4.3</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/safe hands rehab.png"  style="width:100%">
+          <u>Safe Hands Rehabilitation Society</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 8427009040 / +91 9814009040</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>shrschandigarh@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>1, Farm House, Main Road, Khuda Ali Sher, Chandigarh-160001</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Safe+Hands+Rehabilitation+Society/@30.772897,76.7957472,17z/data=!3m1!4b1!4m5!3m4!1s0x390ff2994e3f877d:0xe3be2c911acd29a5!8m2!3d30.7728924!4d76.7979359?hl=en-US">Google Map Link</a><br>
+          <a class="serv">Rating: 3.6</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/arrive safe.png"  style="width:100%">
+          <u>Arrive Safe</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-904-130-0000 / +911724623232</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>arrivesafe@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>268, Sector 21A, Sector 21, Chandigarh-160022</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Arrive+Safe/@30.7295361,76.7768947,17z/data=!3m1!4b1!4m5!3m4!1s0x390feda96aaaaaab:0xdd14075004c5c062!8m2!3d30.7295386!4d76.7790772">Google Map Link</a><br>
+          <a class="serv">Rating: 3.4</a>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/vhap.png"  style="width:100%">
+          <u>Voluntary Health Association Of Punjab</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>9877761411</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>vhapunjab@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Sood Complex, Top Floor, opposite Committee Office, Nayagaon, Chandigarh-160103</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Voluntary+Health+Association+of+Punjab/@30.7737656,76.7928682,17z/data=!3m1!4b1!4m5!3m4!1s0x390ff3dd03a1b543:0xec89c1ea18f73914!8m2!3d30.773761!4d76.7950569">Google Map Link</a><br>
+        </div>
+      </div>
+      <div class="column chandigarh">
+        <div class="content">
+          <img src="images/nari jagriti mission.jpg"  style="width:100%">
+          <u>Nari Jagriti Mission</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>9872511133</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>narijagritimission@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>3036, 19D, Sector 19, Chandigarh-160019</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/3036,+19D,+Sector+19,+Chandigarh,+160019/@30.7293245,76.7860707,17z/data=!3m1!4b1!4m8!1m2!2m1!1sNari+Jagriti+Mission+House+No+3036+Sector+19+D+Chandigarh!3m4!1s0x390fed05abaed05d:0x857f9d2a59561c19!8m2!3d30.7293199!4d76.7882594">Google Map Link</a><br>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Helpage India.jpg"  style="width:100%">
+          <u>HelpAge India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>044 2532 2149</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>headoffice@helpageindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>3-C, Thiyagaraja Complex, 853, Poonamallee High Road, Kilpauk, Chennai-600010</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/HelpAge+India/@13.0784489,80.245589,17z/data=!3m1!4b1!4m5!3m4!1s0x3a5265d4ffffffff:0x29dc2e443e482c64!8m2!3d13.0784437!4d80.2477777">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Karunai Ullangal trust.jpg"  style="width:100%">
+          <u>Karunai Ullangal Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>098417 76685</a><br>
+          <a class="serv">Official Website:</a>&nbsp;<a href="https://karunai-ullangal-trust.business.site/">karunai-ullangal-trust</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>26/99, Adithanar Rd, Pudupet, Komaleeswaranpet, Egmore, Chennai-600002</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Karunai+Ullangal+Trust+Old+Age+Support+%2F+Senior+Citizen+Help+%2F+Free+Ambulance+Service+%2F+Mentally+challenge+Home+Support/@13.0690119,80.265277,17z/data=!3m1!4b1!4m5!3m4!1s0x3a526703ba017db3:0x90d5a17510b28000!8m2!3d13.0690067!4d80.2674657">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Siragu Empowering Women.jpg"  style="width:100%">
+          <u>Siragu-Empowering Women</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>099520 28886</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@siragu.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>No.10 2nd Floor, Anna Salai, SM Nagar, Pallavan, Chennai-600002</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Siragu+-+Empowering+Women/@13.078265,80.2740687,17z/data=!3m1!4b1!4m5!3m4!1s0x3a5266f55a066c21:0x874e1a2143676193!8m2!3d13.0782598!4d80.2762574">Google Map Link</a><br>
+          <a class="serv">Rating: 4.7</a>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/DEAN Foundation, Hospice and Palliative Care centre.jpg"  style="width:100%">
+          <u>DEAN Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-44-26454949 / 26461391</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>deanfn@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>52/77, 2nd St, Aspiran Garden Colony, Kilpauk, Chennai-600010</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/DEAN+Foundation+Hospice+and+Palliative+Care+Centre+(A+Public+Charitable+Trust)/@13.0869035,80.2344961,17z/data=!3m1!4b1!4m5!3m4!1s0x3a5265d6e5fa1d9b:0x6d4f6303d2904705!8m2!3d13.0869156!4d80.2366927">Google Map Link</a><br>
+          <a class="serv">Rating: 4.4</a>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Sankara nethralaya.jpg"  style="width:100%">
+          <u>Sankara Nethralaya</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>044 4227 1500</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>mrf@snmail.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>No.41 Old No, 18, College Rd, Nungambakkam, Chennai-600006</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Sankara+Nethralaya(Main)/@13.0671999,80.2329479,14z/data=!4m9!1m2!2m1!1sSankara+Nethralaya!3m5!1s0x3a52666dcfd67037:0x6e54f5d1b554e38e!8m2!3d13.0671999!4d80.2504574!15sChJTYW5rYXJhIE5ldGhyYWxheWEiA4gBAVoUIhJzYW5rYXJhIG5ldGhyYWxheWGSAQ9leWVfY2FyZV9jZW50ZXKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlZhbVI2V2sxQkVBRQ">Google Map Link</a><br>
+          <a class="serv">Rating: 4.1</a>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Help-foundation-logo.png"  style="width:100%">
+          <u>Help Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>044 2476 3530</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>helptamilnadu@yahoo.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>2/232, Thiruvalluvar Street, Srinivasa Nagar, Paraniputhur, Chennai-600122</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/HELP+FOUNDATION/@13.0602952,80.1594,12z/data=!4m9!1m2!2m1!1shelp+foundation+chennai!3m5!1s0x3a52650d117db38d:0x180610867c3477cb!8m2!3d13.1366534!4d80.2525472!15sChdoZWxwIGZvdW5kYXRpb24gY2hlbm5haZIBF25vbl9wcm9maXRfb3JnYW5pemF0aW9u">Google Map Link</a><br>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Shri kumaran trust.jpg"  style="width:100%">
+          <u>Shri Kumaran Charitable Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>09884707580</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>srikumarancharitabletrust@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>No.7, Mosque St, Mullai Thottam, Poonamallee, Pattabiram, Chennai-600072</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Kumaran+Charitable+Trust+Home+For+The+Aged/@13.0497234,80.0903417,15z/data=!4m9!1m2!2m1!1ssri+kumaran+charitable+trust!3m5!1s0x3a5261df76e64865:0xb6b24f8c4a2b349f!8m2!3d13.0497234!4d80.0990964!15sChxzcmkga3VtYXJhbiBjaGFyaXRhYmxlIHRydXN0kgEcc29jaWFsX3NlcnZpY2VzX29yZ2FuaXphdGlvbg">Google Map Link</a><br>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Akanksha Public Charitable trust.png"  style="width:100%">
+          <u>Akanksha Public Charitable Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 8861938512</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>akaankshatrust@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>B 404, The Atrium, 49 Kalakshetra Road, Thiruvanmiyur, Chennai-600041</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://goo.gl/maps/X2qewDwvFK7kpSQP7">Google Map Link</a><br>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Bhumi.jpg"  style="width:100%">
+          <u>Bhumi</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+918144224444</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>contact@bhumi.ngo</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>3/2, Karpaga Vinayagar Kovil Street, Alandur, Chennai-600016</a><br><br><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Bhumi/@13.0029336,80.1854281,14z/data=!4m9!1m2!2m1!1sbhumi+ngo+chennai!3m5!1s0x3a5267b3d0b53375:0x473d1361ea86fc42!8m2!3d13.0029407!4d80.2028989!15sChFiaHVtaSBuZ28gY2hlbm5haVoTIhFiaHVtaSBuZ28gY2hlbm5haZIBF25vbl9wcm9maXRfb3JnYW5pemF0aW9umgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVI1Y0RSWVFtWlJFQUU">Google Map Link</a><br>
+        </div>
+      </div>
+      <div class="column chennai">
+        <div class="content">
+          <img src="images/Working Womens Forum.jpg"  style="width:100%">
+          <u>Working Womens Forum</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+914424992853</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>wwforumindia@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>55, Bhimasena Garden Road, Mylapore, Chennai-600004</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Working+Womens+Forum/@13.0431114,80.2627428,17z/data=!3m1!4b1!4m5!3m4!1s0x3a52662d89f16de3:0x52331d216f73bf8f!8m2!3d13.0431062!4d80.2649315">Google Map Link</a><br>
+          <a class="serv">Rating: 3.0</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Society for child development.jpg"  style="width:100%">
+          <u>Society For Child Development</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education, Livelihood</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a> 91-8920762148</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>sfcdaccounts@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>D-13 Kamla Nagar, New Delhi-110007</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Society+for+Child+Development/@28.6752693,77.1916832,17z/data=!3m1!4b1!4m5!3m4!1s0x390d0351a23bb8dd:0xe077dc475976c665!8m2!3d28.6752646!4d77.1938719">Google Map Link</a><br>
+          <br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Kailash Satyarthi.png"  style="width:100%">
+          <u>Kailash Satyarthi Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education, Health & Nutrition and Livelihood</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-49211111</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>contact@ccdtrust.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>L-6, Kalkaji, New Delhi-110019</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Kailash+Satyarthi+Children%E2%80%99s+Foundation/@28.5324427,77.2506273,17z/data=!3m1!4b1!4m5!3m4!1s0x390ce3959ac26f41:0x37a390a4c75a3cc6!8m2!3d28.532438!4d77.252816?hl=en">Google Map Link</a><br>
+          <a class="serv">Rating: 4.6</a>  
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Helpage India.jpg"  style="width:100%">
+          <u>Helpage India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-41688955</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>headoffice@helpageindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>C–14 Qutab Institutional Area New Delhi–110016</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/HelpAge+India/@28.5370726,77.1535694,9458m/data=!3m1!1e3!4m9!1m2!2m1!1shelpage+india!3m5!1s0x390d1dfa3e2411b5:0xccd66038465a9252!8m2!3d28.5370545!4d77.188644!15sCg1oZWxwYWdlIGluZGlhIgOIAQGSAR1ub25fZ292ZXJubWVudGFsX29yZ2FuaXphdGlvbg?hl=en-IN">Google Map Link</a><br>
+          <a class="serv">Rating: 4.6</a>  
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Goonj.jpeg"  style="width:100%">
+          <u>Goonj</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education, Healthcare, Livelihood, Water, Sanitation, Environment and Disaster relief</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-26972351 / 011-41401216</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>mail@goonj.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>J-93, Sarita Vihar, New Delhi-110076</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Goonj/@28.5351304,77.2958155,17z/data=!3m1!4b1!4m5!3m4!1s0x390ce6a96d259f17:0xa917bb6dc5372ee6!8m2!3d28.5351257!4d77.2980042">Google Map Link</a><br>
+          <br>
+          <a class="serv">Rating: 4.6</a>
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Mobile creches.jfif"  style="width:100%">
+          <u>Mobile Creches</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-23347281</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>suman.p@mobilecreches.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>DIZ Area, Sector IV, Raja Bazar, New Delhi-110001</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Mobile+Creches/@28.632229,77.2100716,17z/data=!3m1!4b1!4m5!3m4!1s0x390cfd4f34a44933:0x6bf7dc916160cf8b!8m2!3d28.6322243!4d77.2122603">Google Map Link</a><br>
+          <br>
+          <a class="serv">Rating: 4.4</a>
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Smile foundation.png"  style="width:100%">
+          <u>Smile Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education, Healthcare, Livelihood, Women Empowerment and Disaster response</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-43123700</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@smilefoundationindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>161 B/4, 3rd Floor, Gulmohar House, Yusuf Sarai Community Centre, New Delhi–110049</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Smile+Foundation+NGO+in+Delhi+%7C+Child+NGO+in+Delhi+%7C+Child+Education+NGO+in+Delhi+%7C+Healthcare+NGO+in+Delhi/@28.5579014,77.2059316,17z/data=!3m1!4b1!4m9!1m2!2m1!1sSmile+foundation+delhi+!3m5!1s0x390ce270271eadef:0xb8e42773f9d463ab!8m2!3d28.5578967!4d77.2081203!15sChZTbWlsZSBmb3VuZGF0aW9uIGRlbGhpIgOIAQGSAR1ub25fZ292ZXJubWVudGFsX29yZ2FuaXphdGlvbg">Google Map Link</a><br>
+          <a class="serv">Rating: 4.3</a>
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Care india.jpeg"  style="width:100%">
+          <u>Care India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education, Healthcare, Livelihood, Women Empowerment, Disaster response</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-69200000</a><br>
+          <a class="serv">Official Website:</a>&nbsp;<a href="https://www.careindia.org/">careindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Module No. 411, 4th Floor, NSIC-MDBP Building, Okhla Industrial Estate, New Delhi–110020</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/CARE+India/@28.5947367,77.0348015,11z/data=!4m13!1m6!3m5!1s0x390ce4f512d15e21:0x39e9571f6022577e!2sCARE+India!8m2!3d28.5531385!4d77.2654022!3m5!1s0x390ce4f512d15e21:0x39e9571f6022577e!8m2!3d28.5531385!4d77.2654022!15sChBjYXJlIGluZGlhIGRlbGhpIgOIAQGSAR1ub25fZ292ZXJubWVudGFsX29yZ2FuaXphdGlvbg">Google Map Link</a><br>
+          <a class="serv">Rating: 4.3</a>
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Hemophilia.png"  style="width:100%">
+          <u>Hemophilia Federation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Women, Medical facilities</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-45034951 / 011-45034972</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>media@educategirls.ngo</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>A-128, Mohammadpur (Behind Bhikaji Cama Place),New Delhi-110066</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Hemophilia+Federation+India/@28.5651281,77.1843812,17z/data=!3m1!4b1!4m5!3m4!1s0x390d1d85a5240693:0x401203da0fe97847!8m2!3d28.5651234!4d77.1865699">Google Map Link</a><br>
+          <br>
+          <a class="serv">Rating: 4.1</a>
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Psycho educational society.png"  style="width:100%">
+          <u>Psycho Educational Society</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education, Health, Livelihood, Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-27479009</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>pesociety.1982@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a> B/P-139 (West),Shalimar Bagh,New Delhi-110088</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Psycho+Educational+Society/@28.709575,77.1538773,17z/data=!3m1!4b1!4m5!3m4!1s0x390d01877d39bd0b:0x9ea0d23c6aec0c4f!8m2!3d28.7096131!4d77.1560377">Google Map Link</a><br>
+          <a class="serv">Rating: 3.0</a>
+        </div>
+      </div>
+      <div class="column delhi">
+        <div class="content">
+          <img src="images/Dr. shroff's charity Eye.png"  style="width:100%">
+          <u>Dr Shroff's Eye Hospital</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Underprivileged, Medical facilities</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-43528828</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>kiranmehta@sceh.net</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>5027, Kedarnath Road, Daryaganj, New Delhi-110002</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Dr.+Shroff's+Charity+Eye+Hospital/@28.6459302,77.2398982,17z/data=!4m13!1m7!3m6!1s0x390cfcdfa061fc6b:0x22999e077d1f4658!2s5027,+Kedarnath+Ln,+opposite+DAV+School,+Daryaganj,+New+Delhi,+Delhi+110002!3b1!8m2!3d28.6459255!4d77.2420869!3m4!1s0x390cfcdee3f30a1b:0xdcbdbb1c9c8b0a08!8m2!3d28.644893!4d77.242293">Google Map Link</a><br>
+          <a class="serv">Rating: 3.0</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="column jaipur">
+        <div class="content">
+          <img src="images/Jeevan Jyoti.jpg"  style="width:100%">
+          <u>Jeevan Jyoti Old Age Home</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>08890366112</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>jeevanjyotijaipur@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Pashu Hatwara, Jamwa Ramgarh Road, Near Step Ahead School, Jaipur-302027</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Jeevan+Jyoti+Old+Age+Home+in+jaipur/@26.9782928,75.9073423,17z/data=!3m1!4b1!4m5!3m4!1s0x396dba87b977f7b1:0xd7b48a5240869a3c!8m2!3d26.978288!4d75.909531">Google Map Link</a><br>
+          <a class="serv">Rating: 4.9</a>
+        </div>
+      </div>
+      <div class="column jaipur">
+        <div class="content">
+          <img src="images/Manav Sewa Trust.jpg"  style="width:100%">
+          <u>Manav Seva Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education, Health, Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>09461420808</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@mstraj.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>94/82-A, Sector-9, Kumbha Marg, Pratap Nagar, Sanganer, Jaipur-302033</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Manav+Seva+Trust+Rajasthan/@26.8239807,75.6798195,12z/data=!4m9!1m2!2m1!1smanav+seva+trust!3m5!1s0x396dc9923e89099d:0xa9acc150af5d04fd!8m2!3d26.8024307!4d75.8213494!15sChBtYW5hdiBzZXZhIHRydXN0kgEdbm9uX2dvdmVybm1lbnRhbF9vcmdhbml6YXRpb24">Google Map Link</a><br>
+          <a class="serv">Rating: 4.9</a>
+        </div>
+      </div>
+      <div class="column jaipur">
+        <div class="content">
+          <img src="images/Disha Foundation.jpg"  style="width:100%">
+          <u>Disha Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Differently abled children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>01412393319</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>disha@dishafoundation.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>C-Nirman Nagar, Pandit TN Mishra Marg, Nirman Nagar, Jaipur-302019</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Disha+-+A+Resource+Centre+For+Multiple+Disabilities/@26.8884114,75.751372,17z/data=!3m1!4b1!4m5!3m4!1s0x396c1c5f95555555:0xb206063dd22ec625!8m2!3d26.8884066!4d75.7535607">Google Map Link</a><br>
+          <a class="serv">Rating: 4.4</a>
+        </div>
+      </div>
+      <div class="column jaipur">
+        <div class="content">
+          <img src="images/Bal Sansar Sanstha.png"  style="width:100%">
+          <u>Bal Sansar Sanstha</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education, Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+919829011880</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>bsansarindia@yahoo.co.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>B-88, Saraswati Marg,, Bajaj Nagar, Jaipur-302015</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Bal+Sansar+Sanstha/@26.8720638,75.800633,17z/data=!3m1!4b1!4m5!3m4!1s0x396db5d4c1955555:0x18273ba197ccaed5!8m2!3d26.872059!4d75.8028217">Google Map Link</a><br>
+          <a class="serv">Rating: 4.4</a>
+        </div>
+      </div>
+      <div class="column jaipur">
+        <div class="content">
+          <img src="images/Helpage India.jpg"  style="width:100%">
+          <u>Helpage India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education, Elderly, Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>0141-2220241 / 09587237317</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>jaipur@helpageindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>100, Hanuman Nagar Extension, Rajendra Nagar, Vaishali Nagar, Jaipur-302021</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Helpage+india+Centre,+Vaishali+Nagar/@26.9197337,75.7293874,17z/data=!3m1!4b1!4m5!3m4!1s0x396db35c743b08d1:0xceea26d266561b6e!8m2!3d26.9197291!4d75.7315619">Google Map Link</a><br>
+          <a class="serv">Rating: 4.1</a>
+        </div>
+      </div>
+      <div class="column jaipur">
+        <div class="content">
+          <img src="images/Annakshetra Org.jfif"  style="width:100%">
+          <u>Annakshetra Organization</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Food</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>09001295293</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@annakshetra.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>16, Shree Gopal Nagar, Jaipur-302015</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Annakshetra+Foundation+Trust/@26.8775459,75.7727427,17z/data=!3m1!4b1!4m5!3m4!1s0x396db5ca2713a2cb:0x13404e98b0437884!8m2!3d26.8775436!4d75.774932">Google Map Link</a><br>
+          <a class="serv">Rating: 3.8</a>
+        </div>
+      </div>
+      <div class="column jaipur">
+        <div class="content">
+          <img src="images/Sahayta Trust.jpg"  style="width:100%">
+          <u>Sahayta Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Health(Road Safety Victims)</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-141-2554151 / 9414078998</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@sahaytatrust.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>297, Tonk Rd, Taru Chhaya Nagar, Jaipur-302029</a><br><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Sahayta/@28.7022486,72.8447976,6z/data=!4m9!1m2!2m1!1ssahayta+trust!3m5!1s0x396db5f74ae66eb9:0x7369f0804dfea91!8m2!3d26.8320486!4d75.7939746!15sCg1zYWhheXRhIHRydXN0kgEQY29ycG9yYXRlX29mZmljZQ">Google Map Link</a><br>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Bani mandir.png"  style="width:100%">
+          <u>Bani Mandir</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>7001717319</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>banimandir06@rediffmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Khordanahala, P.O–Sadhurhat, Dist–South 24 Paraganas, West Bengal-743504</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Bani+Mandir/@22.2994293,88.1464683,17z/data=!3m1!4b1!4m5!3m4!1s0x3a028a1555555555:0x46d69d97d7c49491!8m2!3d22.2994293!4d88.148657?hl=en">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Mission smile.png"  style="width:100%">
+          <u>Mission Smile</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Medical facilities</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>9073397002 / 9953981906</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>contact@missionsmile.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>India Power Building Plot No. X–1,2,&3 Block EP, Sector 5, Salt Lake city. Kolkata-700 091</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Mission+Smile/@22.5490046,88.3648578,13z/data=!4m9!1m2!2m1!1smission+smile!3m5!1s0x3a0275aec5e33309:0x997b78767260ed8d!8m2!3d22.572447!4d88.434898!15sCg1taXNzaW9uIHNtaWxlkgEdbm9uX2dvdmVybm1lbnRhbF9vcmdhbml6YXRpb24">Google Map Link</a><br>
+          <a class="serv">Rating: 4.9</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Tomorrow's foundation.png"  style="width:100%">
+          <u>Tomorrows Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Underprivileged, Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011-33246515</a><br>
+          <a class="serv">Official Website:</a>&nbsp;<a href="http://tomorrowsfoundation.org.in">tomorrowsfoundation.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>61/1, near Pratapaditya Road, 1st Floor, Lalpara, Mudiali, Kalighat, Kolkata-700026</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Tomorrow's+Foundation/@22.5100874,88.3423087,17z/data=!3m1!4b1!4m5!3m4!1s0x3a02765321b3ac7b:0xbc4f6f475050dd94!8m2!3d22.5100897!4d88.3444597">Google Map Link</a><br>
+          <a class="serv">Rating: 4.6</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Sabuj Sangha.png"  style="width:100%">
+          <u>Sabuj Sangha</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education, Healthcare provision</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>01133 2441 4357</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>director@sabujsangha.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>30/9 Rajdanga Main Road (East) Kolkata-700107</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Rajdanga+Sabuj+Sangha/@22.5131089,88.3909415,17z/data=!3m1!4b1!4m5!3m4!1s0x3a027105e92baaf5:0x8c4944a2a76621eb!8m2!3d22.5131089!4d88.3931302">Google Map Link</a><br>
+          <a class="serv">Rating: 4.5</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Hope Kolkata foundation.png"  style="width:100%">
+          <u>Hope Kolkata Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>91-33-24742904</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@hkf.ind.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Hope Kolkata Foundation 39, Panditya Place Kolkata-700029</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Hope+Kolkata+Foundation/@22.5218918,88.3558237,17z/data=!3m1!4b1!4m5!3m4!1s0x3a02772943cd7c41:0x2b942ed240323c63!8m2!3d22.5218893!4d88.3581094">Google Map Link</a><br>
+          <a class="serv">Rating: 4.4</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Rural health care foundation.jpg"  style="width:100%">
+          <u>Rural Health Care Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Underprivileged, Healthcare</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>91-3340042981</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>rhcf2009@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>33 Alexandra Court 63 Chowringhee Road, Kolkata-700020</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Rural+Health+Care+Foundation/@22.5394285,88.344921,17z/data=!3m1!4b1!4m5!3m4!1s0x3a027715ec13307b:0xa6856fc80aa9894!8m2!3d22.5393928!4d88.3471029">Google Map Link</a><br>
+          <br>
+          <a class="serv">Rating: 4.3</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Paripurnata half way Foundation.jpeg"  style="width:100%">
+          <u>Paripurnata Half-Way-Home</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Health & Family Welfare</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>011 (33) 2432-9339 </a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>paripurnata@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>1912 Panchasayar Road, Kolkata-700094</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Paripurnata+Halfway+Home/@22.4783627,88.3898645,17z/data=!3m1!4b1!4m5!3m4!1s0x3a027170786f7fd7:0x35962d5255bd4457!8m2!3d22.4783627!4d88.3920532">Google Map Link</a><br>
+          <a class="serv">Rating: 4.2</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Turnstone Global.png"  style="width:100%">
+          <u>Turnstone Global</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Covid, Education, Health, Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 8777388815</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@turnstoneglobal.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>F1, Om Tower, 36C, Kolkata-700002</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Turnstone+Global/@22.626791,88.3758953,17z/data=!3m1!4b1!4m5!3m4!1s0x39f89d93cce5423d:0x5429798567a4ac3e!8m2!3d22.6267941!4d88.3780842">Google Map Link</a><br>
+          <a class="serv">Rating: 4.0</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Abha mission.jpeg"  style="width:100%">
+          <u>Abha Mission for Social Health and Education</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Livelihoods, Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>91-9903290696</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>abhamission@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>26N, East Road, Kolkata-700032</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Abha+Mission+for+Social+Health+and+Education/@22.4950625,88.3659805,17z/data=!3m1!4b1!4m5!3m4!1s0x3a027122398dfcc1:0xe775b0655066e7c3!8m2!3d22.4950625!4d88.3681692">Google Map Link</a><br>
+          <a class="serv">Rating: 4.0</a>
+        </div>
+      </div>
+      <div class="column kolkata">
+        <div class="content">
+          <img src="images/Love n care for animals.jpg"  style="width:100%">
+          <u>Love N Care For Animals</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Animal Husbandry</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>9433075715</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>lovencareforanimals@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Jaganathpur Sonamukhi, Asuti 2, Maheshtala, South 24 Parganas District, Shibrampur, Kolkata-700141</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Love+N+Care+for+animals/@22.4757798,88.2694179,17z/data=!4m5!3m4!1s0x3a027bb8d1555555:0x3c5f91fdd7f4a0e7!8m2!3d22.4757688!4d88.2716704">Google Map Link</a><br>
+          <a class="serv">Rating: 3.5</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/DeviSansthanLogo.png"  style="width:100%">
+          <u>Devi Sansthan NGO</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-7408406000</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@globaldream.guru</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>10, Station Rd, Husainganj, Lucknow-226001</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Devi+Sansthan+NGO:+Global+Dream+Literacy+%26+Sampoorn+Nai+Shiksha/@26.8520138,80.8707951,12z/data=!4m9!1m2!2m1!1seducation+ngo+in+lucknow!3m5!1s0x399bfd08180b4343:0xdf3cb68ca281f7a2!8m2!3d26.8379894!4d80.9340254!15sChhlZHVjYXRpb24gbmdvIGluIGx1Y2tub3daGiIYZWR1Y2F0aW9uIG5nbyBpbiBsdWNrbm93kgEcc29jaWFsX3NlcnZpY2VzX29yZ2FuaXphdGlvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOdGRFMWZXVVZuRUFF">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/angel foundation.png"  style="width:100%">
+          <u>Angels Foundation India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Covid, Food</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>7905881802</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@angelsfoundationindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>1st Floor M.S.-126, Purniya Chauraha, Sector D, Aliganj, Lucknow-226024</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Angels+Foundation+India/@26.836363,80.7838668,11z/data=!4m9!1m2!2m1!1sfood+ngo+in+lucknow!3m5!1s0x3999562d515c6e35:0x44ce6f3dc3e52693!8m2!3d26.8944997!4d80.9405999!15sChNmb29kIG5nbyBpbiBsdWNrbm93kgEdbm9uX2dvdmVybm1lbnRhbF9vcmdhbml6YXRpb24">Google Map Link</a><br>
+          <a class="serv">Rating: 4.8</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/life care.png"  style="width:100%">
+          <u>Life Care Society</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Education, Health</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-7275941861</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>saharabano76@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>123, Saket Palli, Narhai, Near, Zoo Main Gate, Hazratganj, Lucknow-226001</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Life+Care+Educational+and+Welfare+Society/@26.8353972,80.7838608,11z/data=!4m9!1m2!2m1!1smedical+ngo+in+lucknow!3m5!1s0x399bfd1ad7f3e9c9:0xc7f2af6ac1c1ba81!8m2!3d26.8454158!4d80.9546118!15sChZtZWRpY2FsIG5nbyBpbiBsdWNrbm93kgEdbm9uX2dvdmVybm1lbnRhbF9vcmdhbml6YXRpb24">Google Map Link</a><br>
+          <a class="serv">Rating: 4.7</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/save the children.png"  style="width:100%">
+          <u>Save The Children</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91 9870127127, +91 9870147147</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@savethechildren.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>3/221 Vikas Khand, Vidayakpuram, Gomti Nagar, Lucknow-226010</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Save+The+Children/@26.8359491,80.7838642,11z/data=!4m9!1m2!2m1!1schildren+ngo+in+lucknow!3m5!1s0x399be2d01ff3984d:0x10816921c9820fe0!8m2!3d26.8508522!4d80.9969725!15sChdjaGlsZHJlbiBuZ28gaW4gbHVja25vd1oZIhdjaGlsZHJlbiBuZ28gaW4gbHVja25vd5IBEGNvcnBvcmF0ZV9vZmZpY2WaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUm5lR0ZtZERsM1JSQUI">Google Map Link</a><br>
+          <a class="serv">Rating: 4.6</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/akshaya patra.png"  style="width:100%">
+          <u>Akshaya Patra Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Food</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>1800-425-8622 / +919792448359</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>infodesk@akshayapatra.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Khasra No.2811, Nadarganj Industrial Area Road, Amausi, Lucknow-226008</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.co.in/maps/place/The+Akshaya+Patra+Foundation+in+Lucknow/@26.7666077,80.8447655,17z/data=!3m1!4b1!4m5!3m4!1s0x399bf95d015f82b9:0xd49121f2eea9dbeb!8m2!3d26.7666029!4d80.8469542?hl=en">Google Map Link</a><br>
+          <a class="serv">Rating: 4.5</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/humsafar.png"  style="width:100%">
+          <u>HUMSAFAR Support Centre</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>0522-2205215</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>humsafar25nov@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>C-80 flat no. 2, near Channi lal chouraha, Sector A, Mahanagar, Lucknow-226006</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/HUMSAFAR+support+centre+for+women/@26.8352592,80.78386,11z/data=!4m9!1m2!2m1!1swomen+ngo+in+lucknow!3m5!1s0x399bfd11cc7aa839:0x2865bbaee2589ed1!8m2!3d26.8762143!4d80.9522219!15sChR3b21lbiBuZ28gaW4gbHVja25vd1oWIhR3b21lbiBuZ28gaW4gbHVja25vd5IBE3dvbWVuc19vcmdhbml6YXRpb26aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUkJiMHB4YVVaM0VBRQ">Google Map Link</a><br>
+          <a class="serv">Rating: 4.5</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/promak.jpg"  style="width:100%">
+          <u>Promak Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-8604240685</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>promakfoundation@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>H-100 Jankipuram Garden Behind Sec J Kursi Road, JankiPuram, Lucknow-226021</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Promak+Foundation+-+NGO+in+Lucknow+%2F+Lucknow+NGO+%2F+Lucknow+Top+NGO/@26.8520828,80.8707955,12z/data=!4m9!1m2!2m1!1selderly+ngo+in+lucknow!3m5!1s0x399bfe6605b8d213:0xbb26641a3c5f64aa!8m2!3d26.9192721!4d80.960335!15sChZlbGRlcmx5IG5nbyBpbiBsdWNrbm93WhgiFmVsZGVybHkgbmdvIGluIGx1Y2tub3eSAR1ub25fZ292ZXJubWVudGFsX29yZ2FuaXphdGlvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOSmRGbExPRmgzRUFF">Google Map Link</a><br>
+          <a class="serv">Rating: 4.5</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/Helpage India.jpg"  style="width:100%">
+          <u>Helpage India</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Elderly</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+915222738048</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>headoffice@helpageindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>3/129, Sector 3, Vikas Nagar, Lucknow-226022</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Helpage+India+Office/@26.8521173,80.8707957,12z/data=!4m9!1m2!2m1!1selderly+ngo+in+lucknow!3m5!1s0x399957c339ec75a1:0xccf447c0898999cd!8m2!3d26.8961891!4d80.9611331!15sChZlbGRlcmx5IG5nbyBpbiBsdWNrbm93WhgiFmVsZGVybHkgbmdvIGluIGx1Y2tub3eSAR1ub25fZ292ZXJubWVudGFsX29yZ2FuaXphdGlvbpoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VRNGNqaEhXalIzUlJBQg">Google Map Link</a><br>
+          <a class="serv">Rating: 4.2</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/lucknow mahila sewa trust.png"  style="width:100%">
+          <u>Lucknow Mahila Sewa Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Covid, Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>7622-001-116</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>lmst@rediffmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>3/93 Vikas Nagar, Lucknow-226022 </a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Lucknow+Mahila+Sewa+Trust/@28.6478898,179.8599243,11z/data=!4m9!1m2!2m1!1swomen+ngo+in+lucknow!3m5!1s0x399957c372b78d15:0x7a3c2e77add5ef8f!8m2!3d20.9880134!4d82.7525294!15sChR3b21lbiBuZ28gaW4gbHVja25vd1oWIhR3b21lbiBuZ28gaW4gbHVja25vd5IBHW5vbl9nb3Zlcm5tZW50YWxfb3JnYW5pemF0aW9umgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5EYlhCRFdIaEJSUkFC">Google Map Link</a><br>
+          <a class="serv">Rating: 4.1</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/Help-U-logo.png"  style="width:100%">
+          <u>Help U Educational Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>9415786000 / 9415020720</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>helpu.chairman@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>25/2G, Adjacent Swaran Jayanti Smiriti Vihar Park, Indira Nagar, Lucknow-226016</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Help+U+Educational+%26+Charitable+Trust/@26.8519793,80.8707949,12z/data=!4m9!1m2!2m1!1seducation+ngo+in+lucknow!3m5!1s0x399957fe7fbbe757:0x5f5744545e66713e!8m2!3d26.8882735!4d80.9800599!15sChhlZHVjYXRpb24gbmdvIGluIGx1Y2tub3eSAQdjaGFyaXR5">Google Map Link</a><br>
+          <a class="serv">Rating: 3.8</a>
+        </div>
+      </div>
+      <div class="column lucknow">
+        <div class="content">
+          <img src="images/smile child care.png"  style="width:100%">
+          <u>SMILE Child Care Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>91-172-2744553, +91-172-2748131</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>smilechildcaref@gmail.com</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>41, Motilal Nehru Marg, Ghasyari Mandi, Aminabad, Lucknow-226018</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/SMILE+child+care+Foundation/@26.836087,80.7838651,11z/data=!4m9!1m2!2m1!1schildren+ngo+in+lucknow!3m5!1s0x399bfd403686223b:0xda938b6e2ff01e11!8m2!3d26.8399194!4d80.9348225!15sChdjaGlsZHJlbiBuZ28gaW4gbHVja25vd5IBHW5vbl9nb3Zlcm5tZW50YWxfb3JnYW5pemF0aW9u">Google Map Link</a><br>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/QUEST.jpg"  style="width:100%">
+          <u>QUEST</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a> 09209430801</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>quest@quest.org.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>B/4, S.No. 10/1, 12A, 1st Floor Uday Park Madan Talathi Marg, Kothrud, Pune-411029</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Quality+Education+Support+Trust+(QUEST)/@18.5001064,73.8156132,17z/data=!3m1!4b1!4m5!3m4!1s0x3bc2bfd67b4bf0ed:0x21063abdfbc646a0!8m2!3d18.5000357!4d73.8178007">Google Map Link</a><br>
+          <a class="serv">Rating: 5.0</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/ARPAN.jpg"  style="width:100%">
+          <u>Arpan</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>91 22 26862444 / 26868444</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@arpan.org.in</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Arpan, 1st Floor, Delta Chemicals PVT Ltd., J-1 Cama Industrial Zone, Off Val Bhat Road, Goregaon (E) Mumbai-400063</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Arpan+-+Towards+Freedom+From+Child+Sexual+Abuse./@19.1579125,72.8510445,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7b7b3f1c24b2d:0x33d59b818d410684!8m2!3d19.1578968!4d72.8532146">Google Map Link</a><br>
+          <a class="serv">Rating: 4.9</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/EDUCATE GIRLS.png"  style="width:100%">
+          <u>Educate Girls</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Women's Development & Empowerment</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>022 2630 3555</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>media@educategirls.ngo</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>C103/C104 1st Floor, Remi Bizcourt, Shah Industrial Estate, Off Veera Desai Road, Andheri West, Mumbai-400053</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/search/Educate+Girls+-+Head+Office,+C103%2FC104+1st+Floor,+Remi+Bizcourt,+Shah+Industrial+Estate,+Off+Veera+Desai+Road,+Andheri+West,+Mumbai,+Maharashtra+400053/@19.1375028,72.8322554,14z">Google Map Link</a><br>
+          <a class="serv">Rating: 4.8</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/TARANG FOUNDATION.png"  style="width:100%">
+          <u>Tarang NGO</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education, Health, Livelihood, Women Empowerment, Disaster Response</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>91-9820199092 / 022 4256 0056</a><br>
+          <a class="serv">Official Website:</a>&nbsp;<a href="http://www.tarang.org/">tarang.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>24, Nand Deep Industrial Estate, Bhim Nagar, Andheri East, Mumbai-400059</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Tarang+NGO+Mumbai/@19.1120371,72.8685693,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7c83e95f7a22d:0x7795c4af61dc2a75!8m2!3d19.112032!4d72.870758">Google Map Link</a><br>
+          <a class="serv">Rating: 4.7</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/Committed Communities Development Trust.png"  style="width:100%">
+          <u>Committed Communities Development Trust</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Health & Family Welfare</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>022 6688 1901</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>contact@ccdtrust.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>42 Chapel Road, Bandra West, Mumbai-400050</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Committed+Communities+Development+Trust/@19.0531211,72.8265504,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7c93f42bcffb5:0xcba38ccd0a473137!8m2!3d19.053116!4d72.8287391">Google Map Link</a><br>
+          <a class="serv">Rating: 4.6</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/OASIS.jpg"  style="width:100%">
+          <u>Oasis India-Kamathipura Hub</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Children, Livelihoods, Women</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>+91-80 4375 7067</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@oasisindia.org / Communication@oasisindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>12th Lane, near Cricket Ground, Dalal Estate, Kamathipura, Mumbai-400008</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/search/Oasis+India+-+Kamathipura+Hub,+12th+Ln,+near+Cricket+Ground,+Dalal+Estate,+Kamathipura,+Mumbai,+Maharashtra+400008/@18.9655701,72.8253675,17z/data=!3m1!4b1">Google Map Link</a><br>
+          <br>
+          <a class="serv">Rating: 4.4</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/UMMEED.jpg"  style="width:100%">
+          <u>Ummeed Child Development Center</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Advocacy, Disabled, Healthcare</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>022 6248 8100 / 022 2300 2006</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@ummeed.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>1-B,1/62, Mantri Pride Building, N.M.Joshi Marg, Near Arthur Road Junction, Subash Nagar, Lower Parel East, Mumbai-400011</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Ummeed+Child+Development+Center/@18.9872411,72.8292892,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7ce5dbaaaaaab:0xe55be264cd47f1d6!8m2!3d18.9872018!4d72.8314947">Google Map Link</a><br>
+          <a class="serv">Rating: 4.4</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/ABHILASHA.jpg"  style="width:100%">
+          <u>Abhilasha Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education, Health, Sustainability, Vocational training, Empowering women and child development</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>022-28677820 /+91 9769986440 /+91 9870234440</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@abhilasha-foundation.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>Abhilasha Foundation ,Laxmi Chhaya Bungalow, Plot no: 27-27, RSC 11, Gorai-2, Borivali(W), Mumbai-400091</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Abhilasha+Foundation+NGO/@19.2253771,72.8254583,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7b11e342c92d9:0xee794461be6769f!8m2!3d19.225372!4d72.827647">Google Map Link</a><br>
+          <a class="serv">Rating: 4.3</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/SPCA.jpg"  style="width:100%">
+          <u>THANE Society for the Prevention of Cruelty to Animals</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Animal Welfare, Emergency Relief, Healthcare</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>087676 12344</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>info@thanespca.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>N.K.T Compound, Kolshet Road Besides Brahmand Complex, Azad Nagar, Thane West, Mumbai-400607</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Thane+SPCA/@19.2388626,72.982487,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7bbfb8a161537:0x475346e35283b3a5!8m2!3d19.2389232!4d72.9846848">Google Map Link</a><br>
+          <a class="serv">Rating: 3.9</a>
+        </div>
+      </div>
+      <div class="column mumbai">
+        <div class="content">
+          <img src="images/CHILD HELP FOUNDATION.png"  style="width:100%">
+          <u>Child Help Foundation</u><br><br>
+          <a class="serv">Services:</a>&nbsp;<a>Education</a><br>
+          <a class="serv">Phone No:</a>&nbsp;<a>09819900180</a><br>
+          <a class="serv">Email Id:</a>&nbsp;<a>contact@childhelpfoundationindia.org</a><br>
+          <a class="serv">Address:</a>&nbsp;<a>4 /F1,35, Court Chambers, Near - SNDT Women College, New Marine Lines, Mumbai-400020</a><br>
+          <a class="serv"></a>&nbsp;<a href="https://www.google.com/maps/place/Child+Help+Foundation+-+Mumbai+Office+2/@18.9384288,72.8267789,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7d1de3c324fc1:0xd8ddfc357dd1135b!8m2!3d18.9384237!4d72.8289676">Google Map Link</a><br>
+          <br><br>
+          <a class="serv">Rating: 3.7</a>
+        </div>
+      </div>
+      
+
+
+
+      
+
+      
+  
+    <script> 
+
+      function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+      function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
+
+      window.onscroll = function() {myFunction()};
+
+      var header = document.getElementById("myHeader");
+      var sticky = header.offsetTop;
+
+      function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
+
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("column");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+      }
+    }
+
+    function AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+
+    function RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
+</section>
+
+
+<footer>
+  <div class="footer">
+    <a class="f2" id="contact us">Contact Us</a><br><br>
+    <a class="f3">8700392214 &nbsp; |&nbsp; 9873288191 &nbsp;| &nbsp; 8929573267</a><br><br>
+    <a class="f3">humanitywithuss@gmail.com</a><br><br>
+    <a href="https://www.facebook.com/Humanity-With-Us-104431332230016" class="fa fa-facebook"></a>
+    <a href="https://instagram.com/humanitywithus?igshid=YmMyMTA2M2Y=" class="fa fa-instagram"></a><br><br>
+  </div>
+
+</footer>
+
+
+</body>
+</html>
